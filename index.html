@@ -49,9 +49,12 @@
 </head>
 <body class="font-sans text-gray-800 bg-white overflow-x-hidden">
  
- <!-- Destinations continuation -->
- <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
- <a href="https://hotelscomparateur.com/" target="_blank" class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll card-hover" style="transition-delay: 0.5s;">
+  <!-- Destinations (Partial view based on your previous code) -->
+  <section id="destinations" class="py-20 lg:py-28 bg-brand-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <!-- Existing destination cards -->
+  <a href="https://hotelscomparateur.com/" target="_blank" class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll card-hover" style="transition-delay: 0.5s;">
   <img src="http://static.photos/travel/640x360/80" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Dubai">
   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
   <div class="absolute bottom-0 left-0 right-0 p-6">
@@ -139,5 +142,55 @@
   </div>
   </div>
   </section>
+
+ <!-- CTA Section -->
+ <section class="py-20 lg:py-28 bg-gradient-to-br from-brand-800 via-brand-700 to-brand-600 relative overflow-hidden">
+ <div class="absolute inset-0 pointer-events-none">
+ <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-500/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+ <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-400/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
+ </div>
+ 
+ <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+ <div class="animate-on-scroll">
+ <h2 class="font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+ Stop Overpaying for Hotels.
+ <br>
+ <span class="text-accent-400">Start Saving Today.</span>
+ </h2>
+ <p class="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto mb-10">
+ Join 2 million+ smart travelers who use HotelsComparateur to find the best hotel deals. It's 100% free — you have nothing to lose and money to save.
+ </p>
+ <div class="flex flex-col sm:flex-row gap-4 justify-center">
+ <a href="https://hotelscomparateur.com/" target="_blank" class="group bg-accent-500 hover:bg-accent-400 text-brand-900 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent-500/30 inline-flex items-center justify-center gap-3">
+ <i data-lucide="search" class="w-6 h-6"></i>
+ Compare Hotels Now
+ <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+ </a>
+ </div>
+ <p class="text-white/40 text-sm mt-6">No sign-up required • No credit card needed • 100% free</p>
+ </div>
+ </div>
+ </section>
+ 
+ <!-- Footer -->
+ <footer class="bg-brand-900 pt-16 pb-8">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-white/10">
+ <div class="lg:col-span-2">
+ <a href="https://hotelscomparateur.com/" target="_blank" class="flex items-center gap-2 mb-4">
+ <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
+ <i data-lucide="building-2" class="w-5 h-5 text-accent-400"></i>
+ </div>
+ <span class="text-white font-bold text-lg">Hotels<span class="text-accent-400">Comparateur</span></span>
+ </a>
+ <p class="text-white/50 max-w-md leading-relaxed mb-6">The smartest way to find and compare hotel prices from 100+ booking sites. Save up to 35% on your next stay.</p>
+ <a href="https://hotelscomparateur.com/" target="_blank" class="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-400 text-brand-900 font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-300">
+ Start Comparing
+ <i data-lucide="arrow-right" class="w-4 h-4"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+ </footer>
 </body>
 </html>

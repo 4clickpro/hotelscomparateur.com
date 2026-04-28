@@ -11,48 +11,18 @@
  let guestDetails = {};
  const LIVE_API_KEY = 'sand_a687b685-9662-4ba4-b948-6f21a3c6e38f';
 
- async function liteapiCall(method, url, body) {
- const prompt = `You are a hotel booking API proxy. Make the following HTTP request and return ONLY the raw JSON response body, no explanation, no markdown, just valid JSON.
-Method: ${method}
-URL: ${url}
-Headers: {"X-API-Key": "${API_KEY}", "accept": "application/json"${body ? ', "content-type": "application/json"' : ''}}
-${body ? Body: ${JSON.stringify(body)} : ''}
-Return ONLY the JSON response. If you cannot make a real HTTP request, return {"error":{"message":"proxy_unavailable"}}`;
-
- const res = await fetch(PROXY, {
- method: 'POST',
- headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify({
- model: 'claude-sonnet-4-20250514',
- max_tokens: 4000,
- messages: [{ role: 'user', content: prompt }]
- })
- });
- const data = await res.json();
- const text = data.content?.map(c => c.text).join('') || '';
- try {
- const clean = text.replace(/```json\n?|```\n?/g, '').trim();
- return JSON.parse(clean);
- } catch {
- return { error: { message: 'parse_error', raw: text.slice(0, 200) } };
- }
- }
-
+ // ─── API CALL VIA VERCEL PROXY ─────────────
  async function apiCall(method, url, body) {
  try {
- const opts = {
- method,
- headers: {
- 'X-API-Key': LIVE_API_KEY,
- 'accept': 'application/json',
- ...(body ? { 'content-type': 'application/json' } : {})
- },
- ...(body ? { body: JSON.stringify(body) } : {})
- };
- const res = await fetch(url, opts);
- return await res.json();
+   const res = await fetch('/api/proxy', {
+     method: 'POST',
+     headers: { 'Content-Type': 'application/json' },
+     body: JSON.stringify({ url, method, body })
+   });
+   return await res.json();
  } catch (e) {
- return await liteapiCall(method, url, body);
+   console.error("Proxy error:", e);
+   return { error: { message: 'proxy_failed' } };
  }
  }
 

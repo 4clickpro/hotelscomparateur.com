@@ -1,5 +1,5 @@
 // ─── STATE ───────────────────────────────────────────────────
- const API_KEY = 'sand_a…e38f';
+ const API_KEY = 'sand_a687b685-9662-4ba4-b948-6f21a3c6e38f';
  const PROXY = 'https://api.anthropic.com/v1/messages'; 
  let currentTab = 'destination';
  let selectedPlace = null;

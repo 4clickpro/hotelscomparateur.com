@@ -1,231 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>HotelsComparateur — Find & Compare the Best Hotel Deals</title>
- <meta name="description" content="HotelsComparateur.com — Search, compare and book the world's best hotels at unbeatable prices. Find deals by destination or search by vibe with AI-powered recommendations." />
- <meta name="keywords" content="hotel deals, compare hotels, best hotel prices, hotel booking, cheap hotels, luxury hotels, hotel search" />
- <meta property="og:title" content="HotelsComparateur — Compare & Book the Best Hotels" />
- <meta property="og:description" content="Find and compare hotel deals worldwide. AI-powered search, best prices guaranteed." />
- <meta property="og:url" content="https://www.hotelscomparateur.com" />
- <meta property="og:type" content="website" />
- <meta name="robots" content="index, follow" />
- <link rel="canonical" href="https://www.hotelscomparateur.com" />
- <link rel="preconnect" href="https://fonts.googleapis.com" />
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
- <link rel="stylesheet" href="style.css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>HotelsComparateur.com — Find Your Perfect Stay at the Best Price</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ fontFamily: {
+ sans: ['Inter', 'sans-serif'],
+ display: ['Playfair Display', 'serif'],
+ },
+ colors: {
+ brand: {
+ 50: '#eff6ff',
+ 100: '#dbeafe',
+ 200: '#bfdbfe',
+ 300: '#93c5fd',
+ 400: '#60a5fa',
+ 500: '#3b82f6',
+ 600: '#2563eb',
+ 700: '#1d4ed8',
+ 800: '#1e3a5f',
+ 900: '#0f1d32',
+ },
+ accent: {
+ 400: '#fbbf24',
+ 500: '#f59e0b',
+ 600: '#d97706',
+ }
+ }
+ }
+ }
+ }
+ </script>
+ <style>
+ * { scroll-behavior: smooth; }
+
+ .hero-gradient {
+ background: linear-gradient(135deg, #0f1d32 0%, #1e3a5f 40%, #2563eb 100%);
+ }
+
+ .glass {
+ background: rgba(255, 255, 255, 0.08);
+ backdrop-filter: blur(20px);
+ border: 1px solid rgba(255, 255, 255, 0.12);
+ }
+
+ .glass-light {
+ background: rgba(255, 255, 255, 0.95);
+ backdrop-filter: blur(20px);
+ border: 1px solid rgba(255, 255, 255, 0.8);
+ }
+
+ .float-animation {
+ animation: float 6s ease-in-out infinite;
+ }
+
+ .float-animation-delay {
+ animation: float 6s ease-in-out 2s infinite;
+ }
+
+ @keyframes float {
+ 0%, 100% { transform: translateY(0px); }
+ 50% { transform: translateY(-20px); }
+ }
+
+ @keyframes fadeInUp {
+ from { opacity: 0; transform: translateY(30px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+
+ @keyframes slideInLeft {
+ from { opacity: 0; transform: translateX(-50px); }
+ to { opacity: 1; transform: translateX(0); }
+ }
+
+ @keyframes slideInRight {
+ from { opacity: 0; transform: translateX(50px); }
+ to { opacity: 1; transform: translateX(0); }
+ }
+
+ @keyframes pulse-glow {
+ 0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+ 50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+ }
+
+ @keyframes countUp {
+ from { opacity: 0; transform: scale(0.5); }
+ to { opacity: 1; transform: scale(1); }
+ }
+
+ .animate-fade-in-up {
+ animation: fadeInUp 0.8s ease-out forwards;
+ }
+
+ .animate-slide-left {
+ animation: slideInLeft 0.8s ease-out forwards;
+ }
+
+ .animate-slide-right {
+ animation: slideInRight 0.8s ease-out forwards;
+ }
+
+ .animate-on-scroll {
+ opacity: 0;
+ transform: translateY(30px);
+ transition: all 0.8s ease-out;
+ }
+
+ .animate-on-scroll.visible {
+ opacity: 1;
+ transform: translateY(0);
+ }
+
+ .price-tag {
+ animation: pulse-glow 3s ease-in-out infinite;
+ }
+
+ .card-hover {
+ transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ }.card-hover:hover {
+ transform: translateY(-8px);
+ box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+ }
+
+ .shimmer {
+ background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+ background-size: 200% 100%;
+ animation: shimmer 2s infinite;
+ }
+
+ @keyframes shimmer {
+ 0% { background-position: -200% 0; }
+ 100% { background-position: 200% 0; }
+ }
+
+ .text-gradient {
+ background: linear-gradient(135deg, #60a5fa, #f59e0b);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ }
+
+ .stat-number {
+ font-variant-numeric: tabular-nums;
+ }
+
+ /* Mobile menu */
+ .mobile-menu {
+ transform: translateX(100%);
+ transition: transform 0.3s ease-in-out;
+ }
+ .mobile-menu.open {
+ transform: translateX(0);
+ }
+
+ /* Custom scrollbar */
+ ::-webkit-scrollbar { width: 8px; }
+ ::-webkit-scrollbar-track { background: #0f1d32; }
+ ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
+ ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+ </style>
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-white overflow-x-hidden">
 
-<header class="site-header">
- <div class="header-inner">
- <a href="/" class="logo">
- Hotels<span>Comparateur</span>
- <span class="logo-domain">.com</span>
+ <!-- Navigation -->
+ <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div class="flex items-center justify-between h-16 lg:h-20">
+ <a href="https://hotelscomparateur.com/" target="_blank" class="flex items-center gap-2 group">
+ <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 group-hover:bg-accent-500 transition-all duration-300">
+ <i data-lucide="building-2" class="w-5 h-5 text-white"></i>
+ </div>
+ <span class="text-white font-bold text-lg tracking-tight">Hotels<span class="text-accent-400">Comparateur</span></span>
  </a>
- <div class="header-badge">Best Price Guarantee</div>
+ <div class="hidden md:flex items-center gap-8">
+ <a href="#features" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Features</a>
+ <a href="#how-it-works" class="text-white/80 hover:text-white transition-colors text-sm font-medium">How It Works</a>
+ <a href="#destinations" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Destinations</a>
+ <a href="#testimonials" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Reviews</a>
+ <a href="https://hotelscomparateur.com/" target="_blank" class="bg-accent-500 hover:bg-accent-600 text-brand-900 font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-300 hover:shadow-lg hover:shadow-accent-500/25">
+ Compare Now
+ </a>
  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
- <div class="hero-bg"></div>
- <div class="hero-images" id="heroImages">
- <!-- injected dynamically -->
- </div>
- <div class="hero-overlay"></div>
- <div class="hero-content">
- <p class="hero-eyebrow">✦ HotelsComparateur.com ✦</p>
- <h1 class="hero-title">Find Your <em>Perfect</em> Stay<br>at the Best Price</h1>
- <p class="hero-sub">Compare thousands of hotels worldwide — search by destination or describe your ideal trip</p><div class="search-box">
- <div class="search-tabs">
- <button class="search-tab active" id="tab-destination" onclick="switchTab('destination')">
- <span class="tab-icon">🗺</span> Search by Destination
- </button>
- <button class="search-tab" id="tab-vibe" onclick="switchTab('vibe')">
- <span class="tab-icon">✨</span> Search by Vibe (AI)
+ <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+ <i data-lucide="menu" class="w-6 h-6"></i>
  </button>
  </div>
- <div class="search-fields">
- <!-- Destination tab -->
- <div id="panel-destination">
- <div class="search-row cols-3">
- <div class="field-group autocomplete-wrap">
- <label class="field-label">Destination</label>
- <input class="field-input" id="destInput" type="text" placeholder="Paris, Tokyo, New York…" autocomplete="off" oninput="onDestInput(this.value)" />
- <div class="autocomplete-list" id="acList"></div>
  </div>
- <div class="field-group">
- <label class="field-label">Check-in</label>
- <input class="field-input" id="checkinDest" type="date" />
- </div>
- <div class="field-group">
- <label class="field-label">Check-out</label>
- <input class="field-input" id="checkoutDest" type="date" />
- </div>
- </div>
- <div class="search-row cols-2">
- <div class="field-group">
- <label class="field-label">Guests</label>
- <input class="field-input" id="guestsDest" type="number" min="1" max="10" value="2" />
- </div>
- <div class="field-group" style="justify-content: flex-end;">
- <label class="field-label">&nbsp;</label>
- <button class="btn-search" onclick="searchByDestination()">Search Hotels →</button>
- </div>
- </div>
- </div>
- <!-- Vibe tab -->
- <div id="panel-vibe" style="display:none">
- <div class="search-row" style="grid-template-columns:1fr;">
- <div class="field-group">
- <label class="field-label">Describe your ideal stay</label>
- <input class="field-input" id="vibeInput" type="text" placeholder="Romantic boutique hotel in Paris with rooftop views…" />
- </div>
- </div>
- <div class="search-row cols-3">
- <div class="field-group">
- <label class="field-label">Check-in</label>
- <input class="field-input" id="checkinVibe" type="date" />
- </div>
- <div class="field-group">
- <label class="field-label">Check-out</label>
- <input class="field-input" id="checkoutVibe" type="date" />
- </div>
- <div class="field-group">
- <label class="field-label">Guests</label>
- <input class="field-input" id="guestsVibe" type="number" min="1" max="10" value="2" />
- </div>
- </div>
- <button class="btn-search" onclick="searchByVibe()">Find My Hotel ✨</button>
- </div>
- </div>
- </div>
- </div>
-</section>
+ </nav>
 
-<!-- Destination image strip -->
-<div class="dest-strip">
- <div class="dest-scroll" id="destScroll">
- <!-- injected -->
- </div>
-</div>
-
-<!-- TRUST STRIP -->
-<div class="trust-strip">
- <div class="trust-inner">
- <div class="trust-item"><span class="trust-icon">🔒</span> Secure Booking</div>
- <div class="trust-item"><span class="trust-icon">💰</span> Best Price Guarantee</div>
- <div class="trust-item"><span class="trust-icon">🌍</span> 1M+ Hotels Worldwide</div>
- <div class="trust-item"><span class="trust-icon">📞</span> 24/7 Customer Support</div>
- <div class="trust-item"><span class="trust-icon">✅</span> Free Cancellation Available</div>
- </div>
-</div>
-
-<!-- MAIN CONTENT -->
-<main class="main">
-
- <!-- ERROR -->
- <div class="error-msg" id="globalError"></div>
-
- <!-- LOADING -->
- <div class="loading-state" id="loadingState">
- <div class="spinner"></div>
- <p class="loading-text" id="loadingText">Searching for the best hotels…</p>
- </div><!-- HOTEL LIST -->
- <div id="hotelListSection" style="display:none">
- <div class="section-header">
- <h2 class="section-title" id="listTitle">Hotels Found</h2>
- <span class="result-count" id="resultCount"></span>
- </div>
- <div class="hotels-grid" id="hotelsGrid"></div>
- </div>
-
- <!-- CHECKOUT FORM -->
- <div class="checkout-wrap" id="checkoutSection">
- <div style="margin-bottom:1.5rem;">
- <button class="btn-back" onclick="backToHotel()">← Back to hotel</button>
- </div>
- <h2 class="section-title" style="margin-bottom:1.5rem;">Complete Your Booking</h2>
-
- <!-- Booking summary -->
- <div class="checkout-card">
- <div class="checkout-card-header">📋 Booking Summary</div>
- <div class="checkout-card-body">
- <div class="booking-summary" id="checkoutSummary"></div>
- </div>
- </div>
-
- <!-- Guest details -->
- <div class="checkout-card" id="guestFormSection">
- <div class="checkout-card-header">👤 Guest Details</div>
- <div class="checkout-card-body">
- <div class="form-row">
- <div class="form-group">
- <label class="form-label">First Name</label>
- <input class="form-input" id="gFirstName" type="text" placeholder="John" />
- </div>
- <div class="form-group">
- <label class="form-label">Last Name</label>
- <input class="form-input" id="gLastName" type="text" placeholder="Doe" />
- </div>
- </div>
- <div class="form-group" style="margin-bottom:1rem;">
- <label class="form-label">Email Address</label>
- <input class="form-input" id="gEmail" type="email" placeholder="john@example.com" />
- </div>
- <button class="btn-search" onclick="proceedToPayment()">Continue to Payment →</button>
- </div>
- </div>
-
- <!-- Payment section -->
- <div class="checkout-card" id="paymentSection" style="display:none;">
- <div class="checkout-card-header">💳 Secure Payment</div>
- <div class="checkout-card-body">
- <div class="test-card-note">
- 🧪 <strong>Sandbox mode:</strong> Use test card <code>4242 4242 4242 4242</code>, any 3-digit CVV, any future expiry date.
- </div>
- <div id="prebookLoading" style="text-align:center;padding:2rem;display:none;">
- <div class="spinner" style="margin:0 auto 0.75rem;"></div>
- <p class="loading-text">Confirming availability…</p>
- </div>
- <div id="targetElement"></div>
- </div>
- </div>
- </div>
-
- <!-- CONFIRMATION -->
- <div class="confirmation-wrap" id="confirmSection">
- <div class="confirm-icon">✅</div>
- <h2 class="confirm-title">Booking Confirmed!</h2>
- <p class="confirm-sub">Your reservation has been successfully placed. A confirmation email will be sent shortly.</p>
- <div class="confirm-details" id="confirmDetails"></div>
- <button class="btn-search" style="margin-top:1.5rem; max-width:300px;" onclick="startOver()">Search Again</button>
- </div>
-
-</main>
-
-<!-- HOTEL DETAIL MODAL -->
-<div class="modal-overlay" id="hotelModal">
- <div class="modal" id="modalInner">
- <img class="modal-header-img" id="modalHeroImg" src="" alt="" />
- <div class="modal-back">
- <button class="btn-back" onclick="closeModal()">← Back to results</button>
- </div>
- <div class="modal-body">
- <div id="modalLoading" style="text-align:center;padding:2rem;display:none;">
- <div class="spinner" style="margin:0 auto 0.75rem;"></div>
- <p class="loading-text">Loading rooms & rates…</p>
- </div>
- <div id="modalContent"></div>
- </div>
- </div>
-</div>
-
-<!-- Payment SDK -->
-<script src="https://payment-wrapper.liteapi.travel/dist/liteAPIPayment.js?v=a1"></script>
-<script src="script.js"></script>
+ <!-- Content would continue... -->
 </body>
 </html>

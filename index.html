@@ -40,161 +40,66 @@
  </script>
  <style>
  * { scroll-behavior: smooth; }
-
- .hero-gradient {
- background: linear-gradient(135deg, #0f1d32 0%, #1e3a5f 40%, #2563eb 100%);
- }
-
- .glass {
- background: rgba(255, 255, 255, 0.08);
- backdrop-filter: blur(20px);
- border: 1px solid rgba(255, 255, 255, 0.12);
- }
-
- .glass-light {
- background: rgba(255, 255, 255, 0.95);
- backdrop-filter: blur(20px);
- border: 1px solid rgba(255, 255, 255, 0.8);
- }
-
- .float-animation {
- animation: float 6s ease-in-out infinite;
- }
-
- .float-animation-delay {
- animation: float 6s ease-in-out 2s infinite;
- }
-
- @keyframes float {
- 0%, 100% { transform: translateY(0px); }
- 50% { transform: translateY(-20px); }
- }
-
- @keyframes fadeInUp {
- from { opacity: 0; transform: translateY(30px); }
- to { opacity: 1; transform: translateY(0); }
- }
-
- @keyframes slideInLeft {
- from { opacity: 0; transform: translateX(-50px); }
- to { opacity: 1; transform: translateX(0); }
- }
-
- @keyframes slideInRight {
- from { opacity: 0; transform: translateX(50px); }
- to { opacity: 1; transform: translateX(0); }
- }
-
- @keyframes pulse-glow {
- 0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
- 50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
- }
-
- @keyframes countUp {
- from { opacity: 0; transform: scale(0.5); }
- to { opacity: 1; transform: scale(1); }
- }
-
- .animate-fade-in-up {
- animation: fadeInUp 0.8s ease-out forwards;
- }
-
- .animate-slide-left {
- animation: slideInLeft 0.8s ease-out forwards;
- }
-
- .animate-slide-right {
- animation: slideInRight 0.8s ease-out forwards;
- }
-
- .animate-on-scroll {
- opacity: 0;
- transform: translateY(30px);
- transition: all 0.8s ease-out;
- }
-
- .animate-on-scroll.visible {
- opacity: 1;
- transform: translateY(0);
- }
-
- .price-tag {
- animation: pulse-glow 3s ease-in-out infinite;
- }
-
- .card-hover {
- transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
- }.card-hover:hover {
- transform: translateY(-8px);
- box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
- }
-
- .shimmer {
- background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
- background-size: 200% 100%;
- animation: shimmer 2s infinite;
- }
-
- @keyframes shimmer {
- 0% { background-position: -200% 0; }
- 100% { background-position: 200% 0; }
- }
-
- .text-gradient {
- background: linear-gradient(135deg, #60a5fa, #f59e0b);
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
- background-clip: text;
- }
-
- .stat-number {
- font-variant-numeric: tabular-nums;
- }
-
- /* Mobile menu */
- .mobile-menu {
- transform: translateX(100%);
- transition: transform 0.3s ease-in-out;
- }
- .mobile-menu.open {
- transform: translateX(0);
- }
-
- /* Custom scrollbar */
- ::-webkit-scrollbar { width: 8px; }
- ::-webkit-scrollbar-track { background: #0f1d32; }
- ::-webkit-scrollbar-thumb { background: #3b82f6; border-radius: 4px; }
- ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+ .hero-gradient { background: linear-gradient(135deg, #0f1d32 0%, #1e3a5f 40%, #2563eb 100%); }
+ .glass { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.12); }
+ .glass-light { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.8); }
+ .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+ .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
  </style>
 </head>
 <body class="font-sans text-gray-800 bg-white overflow-x-hidden">
-
- <!-- Navigation -->
- <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="flex items-center justify-between h-16 lg:h-20">
- <a href="https://hotelscomparateur.com/" target="_blank" class="flex items-center gap-2 group">
- <div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 group-hover:bg-accent-500 transition-all duration-300">
- <i data-lucide="building-2" class="w-5 h-5 text-white"></i>
+ 
+ <!-- Destinations continuation -->
+ <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+ <a href="https://hotelscomparateur.com/" target="_blank" class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll card-hover" style="transition-delay: 0.5s;">
+  <img src="http://static.photos/travel/640x360/80" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Dubai">
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+  <div class="absolute bottom-0 left-0 right-0 p-6">
+  <div class="flex items-center gap-2 mb-1">
+  <i data-lucide="map-pin" class="w-4 h-4 text-accent-400"></i>
+  <span class="text-white/60 text-sm">UAE</span>
+  </div>
+  <h3 class="font-display text-2xl font-bold text-white">Dubai</h3>
+  <div class="mt-2 inline-flex items-center gap-1 text-accent-400 text-sm font-semibold">
+  From $55/night
+  <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+  </div>
+  </div>
+  </a>
+  </div>
+  </div>
+  </section>
+ 
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-20 lg:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+  <div class="inline-flex items-center gap-2 bg-brand-50 text-brand-600 rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
+  <i data-lucide="message-circle" class="w-4 h-4"></i>
+  Real Reviews
+  </div>
+  <h2 class="font-display text-3xl lg:text-5xl font-bold text-brand-900 mb-4">Loved by Travelers Worldwide</h2>
+  <p class="text-gray-500 text-lg">Don't just take our word for it — hear from real people who saved real money.</p>
+  </div>
+ 
+  <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+  <div class="card-hover bg-gray-50 rounded-2xl p-8 animate-on-scroll">
+  <div class="flex items-center gap-1 mb-4">
+  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
+  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
+  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
+  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
+  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
+  </div>
+  <p class="text-gray-600 leading-relaxed mb-6">"I was about to book a hotel in Rome for $220/night on Booking.com. HotelsComparateur found the SAME room for $149. That's a $70 savings per night! Already recommended it to all my friends."</p>
+  <div class="flex items-center gap-3">
+  <img src="http://static.photos/people/200x200/10" class="w-11 h-11 rounded-full object-cover" alt="Sarah">
+  <div>
+  <div class="font-semibold text-brand-900 text-sm">Sarah M.</div>
+  <div class="text-gray-400 text-xs">Traveled to Rome, Italy</div>
+  </div>
+  </div>
+  </div>
  </div>
- <span class="text-white font-bold text-lg tracking-tight">Hotels<span class="text-accent-400">Comparateur</span></span>
- </a>
- <div class="hidden md:flex items-center gap-8">
- <a href="#features" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Features</a>
- <a href="#how-it-works" class="text-white/80 hover:text-white transition-colors text-sm font-medium">How It Works</a>
- <a href="#destinations" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Destinations</a>
- <a href="#testimonials" class="text-white/80 hover:text-white transition-colors text-sm font-medium">Reviews</a>
- <a href="https://hotelscomparateur.com/" target="_blank" class="bg-accent-500 hover:bg-accent-600 text-brand-900 font-semibold px-5 py-2.5 rounded-xl text-sm transition-all duration-300 hover:shadow-lg hover:shadow-accent-500/25">
- Compare Now
- </a>
- </div>
- <button id="mobileMenuBtn" class="md:hidden text-white p-2">
- <i data-lucide="menu" class="w-6 h-6"></i>
- </button>
- </div>
- </div>
- </nav>
-
- <!-- Content would continue... -->
 </body>
 </html>

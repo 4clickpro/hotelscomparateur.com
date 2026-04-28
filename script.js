@@ -9,6 +9,7 @@
  let selectedOffer = null;
  let prebookData = null;
  let guestDetails = {};
+ const LIVE_API_KEY = 'sand_a687b685-9662-4ba4-b948-6f21a3c6e38f';
 
  async function liteapiCall(method, url, body) {
  const prompt = `You are a hotel booking API proxy. Make the following HTTP request and return ONLY the raw JSON response body, no explanation, no markdown, just valid JSON.
@@ -42,7 +43,7 @@ Return ONLY the JSON response. If you cannot make a real HTTP request, return {"
  const opts = {
  method,
  headers: {
- 'X-API-Key': API_KEY,
+ 'X-API-Key': LIVE_API_KEY,
  'accept': 'application/json',
  ...(body ? { 'content-type': 'application/json' } : {})
  },

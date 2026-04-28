@@ -18,6 +18,214 @@
  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script src="script.js"></script>
+
+<header class="site-header">
+ <div class="header-inner">
+ <a href="/" class="logo">
+ Hotels<span>Comparateur</span>
+ <span class="logo-domain">.com</span>
+ </a>
+ <div class="header-badge">Best Price Guarantee</div>
+ </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+ <div class="hero-bg"></div>
+ <div class="hero-images" id="heroImages">
+ <!-- injected dynamically -->
+ </div>
+ <div class="hero-overlay"></div>
+ <div class="hero-content">
+ <p class="hero-eyebrow">✦ HotelsComparateur.com ✦</p>
+ <h1 class="hero-title">Find Your <em>Perfect</em> Stay<br>at the Best Price</h1>
+ <p class="hero-sub">Compare thousands of hotels worldwide — search by destination or describe your ideal trip</p><div class="search-box">
+ <div class="search-tabs">
+ <button class="search-tab active" id="tab-destination" onclick="switchTab('destination')">
+ <span class="tab-icon">🗺</span> Search by Destination
+ </button>
+ <button class="search-tab" id="tab-vibe" onclick="switchTab('vibe')">
+ <span class="tab-icon">✨</span> Search by Vibe (AI)
+ </button>
+ </div>
+ <div class="search-fields">
+ <!-- Destination tab -->
+ <div id="panel-destination">
+ <div class="search-row cols-3">
+ <div class="field-group autocomplete-wrap">
+ <label class="field-label">Destination</label>
+ <input class="field-input" id="destInput" type="text" placeholder="Paris, Tokyo, New York…" autocomplete="off" oninput="onDestInput(this.value)" />
+ <div class="autocomplete-list" id="acList"></div>
+ </div>
+ <div class="field-group">
+ <label class="field-label">Check-in</label>
+ <input class="field-input" id="checkinDest" type="date" />
+ </div>
+ <div class="field-group">
+ <label class="field-label">Check-out</label>
+ <input class="field-input" id="checkoutDest" type="date" />
+ </div>
+ </div>
+ <div class="search-row cols-2">
+ <div class="field-group">
+ <label class="field-label">Guests</label>
+ <input class="field-input" id="guestsDest" type="number" min="1" max="10" value="2" />
+ </div>
+ <div class="field-group" style="justify-content: flex-end;">
+ <label class="field-label">&nbsp;</label>
+ <button class="btn-search" onclick="searchByDestination()">Search Hotels →</button>
+ </div>
+ </div>
+ </div>
+ <!-- Vibe tab -->
+ <div id="panel-vibe" style="display:none">
+ <div class="search-row" style="grid-template-columns:1fr;">
+ <div class="field-group">
+ <label class="field-label">Describe your ideal stay</label>
+ <input class="field-input" id="vibeInput" type="text" placeholder="Romantic boutique hotel in Paris with rooftop views…" />
+ </div>
+ </div>
+ <div class="search-row cols-3">
+ <div class="field-group">
+ <label class="field-label">Check-in</label>
+ <input class="field-input" id="checkinVibe" type="date" />
+ </div>
+ <div class="field-group">
+ <label class="field-label">Check-out</label>
+ <input class="field-input" id="checkoutVibe" type="date" />
+ </div>
+ <div class="field-group">
+ <label class="field-label">Guests</label>
+ <input class="field-input" id="guestsVibe" type="number" min="1" max="10" value="2" />
+ </div>
+ </div>
+ <button class="btn-search" onclick="searchByVibe()">Find My Hotel ✨</button>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- Destination image strip -->
+<div class="dest-strip">
+ <div class="dest-scroll" id="destScroll">
+ <!-- injected -->
+ </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+ <div class="trust-inner">
+ <div class="trust-item"><span class="trust-icon">🔒</span> Secure Booking</div>
+ <div class="trust-item"><span class="trust-icon">💰</span> Best Price Guarantee</div>
+ <div class="trust-item"><span class="trust-icon">🌍</span> 1M+ Hotels Worldwide</div>
+ <div class="trust-item"><span class="trust-icon">📞</span> 24/7 Customer Support</div>
+ <div class="trust-item"><span class="trust-icon">✅</span> Free Cancellation Available</div>
+ </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+ <!-- ERROR -->
+ <div class="error-msg" id="globalError"></div>
+
+ <!-- LOADING -->
+ <div class="loading-state" id="loadingState">
+ <div class="spinner"></div>
+ <p class="loading-text" id="loadingText">Searching for the best hotels…</p>
+ </div><!-- HOTEL LIST -->
+ <div id="hotelListSection" style="display:none">
+ <div class="section-header">
+ <h2 class="section-title" id="listTitle">Hotels Found</h2>
+ <span class="result-count" id="resultCount"></span>
+ </div>
+ <div class="hotels-grid" id="hotelsGrid"></div>
+ </div>
+
+ <!-- CHECKOUT FORM -->
+ <div class="checkout-wrap" id="checkoutSection">
+ <div style="margin-bottom:1.5rem;">
+ <button class="btn-back" onclick="backToHotel()">← Back to hotel</button>
+ </div>
+ <h2 class="section-title" style="margin-bottom:1.5rem;">Complete Your Booking</h2>
+
+ <!-- Booking summary -->
+ <div class="checkout-card">
+ <div class="checkout-card-header">📋 Booking Summary</div>
+ <div class="checkout-card-body">
+ <div class="booking-summary" id="checkoutSummary"></div>
+ </div>
+ </div>
+
+ <!-- Guest details -->
+ <div class="checkout-card" id="guestFormSection">
+ <div class="checkout-card-header">👤 Guest Details</div>
+ <div class="checkout-card-body">
+ <div class="form-row">
+ <div class="form-group">
+ <label class="form-label">First Name</label>
+ <input class="form-input" id="gFirstName" type="text" placeholder="John" />
+ </div>
+ <div class="form-group">
+ <label class="form-label">Last Name</label>
+ <input class="form-input" id="gLastName" type="text" placeholder="Doe" />
+ </div>
+ </div>
+ <div class="form-group" style="margin-bottom:1rem;">
+ <label class="form-label">Email Address</label>
+ <input class="form-input" id="gEmail" type="email" placeholder="john@example.com" />
+ </div>
+ <button class="btn-search" onclick="proceedToPayment()">Continue to Payment →</button>
+ </div>
+ </div>
+
+ <!-- Payment section -->
+ <div class="checkout-card" id="paymentSection" style="display:none;">
+ <div class="checkout-card-header">💳 Secure Payment</div>
+ <div class="checkout-card-body">
+ <div class="test-card-note">
+ 🧪 <strong>Sandbox mode:</strong> Use test card <code>4242 4242 4242 4242</code>, any 3-digit CVV, any future expiry date.
+ </div>
+ <div id="prebookLoading" style="text-align:center;padding:2rem;display:none;">
+ <div class="spinner" style="margin:0 auto 0.75rem;"></div>
+ <p class="loading-text">Confirming availability…</p>
+ </div>
+ <div id="targetElement"></div>
+ </div>
+ </div>
+ </div>
+
+ <!-- CONFIRMATION -->
+ <div class="confirmation-wrap" id="confirmSection">
+ <div class="confirm-icon">✅</div>
+ <h2 class="confirm-title">Booking Confirmed!</h2>
+ <p class="confirm-sub">Your reservation has been successfully placed. A confirmation email will be sent shortly.</p>
+ <div class="confirm-details" id="confirmDetails"></div>
+ <button class="btn-search" style="margin-top:1.5rem; max-width:300px;" onclick="startOver()">Search Again</button>
+ </div>
+
+</main>
+
+<!-- HOTEL DETAIL MODAL -->
+<div class="modal-overlay" id="hotelModal">
+ <div class="modal" id="modalInner">
+ <img class="modal-header-img" id="modalHeroImg" src="" alt="" />
+ <div class="modal-back">
+ <button class="btn-back" onclick="closeModal()">← Back to results</button>
+ </div>
+ <div class="modal-body">
+ <div id="modalLoading" style="text-align:center;padding:2rem;display:none;">
+ <div class="spinner" style="margin:0 auto 0.75rem;"></div>
+ <p class="loading-text">Loading rooms & rates…</p>
+ </div>
+ <div id="modalContent"></div>
+ </div>
+ </div>
+</div>
+
+<!-- Payment SDK -->
+<script src="https://payment-wrapper.liteapi.travel/dist/liteAPIPayment.js?v=a1"></script>
+<script src="script.js"></script>
 </body>
 </html>

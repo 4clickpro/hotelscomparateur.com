@@ -1,302 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>HotelsComparateur.com — Find Your Perfect Stay at the Best Price</title>
- <script src="https://cdn.tailwindcss.com"></script>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
- <script>
- tailwind.config = {
- theme: {
- extend: {
- fontFamily: {
- sans: ['Inter', 'sans-serif'],
- display: ['Playfair Display', 'serif'],
- },
- colors: {
- brand: {
- 50: '#eff6ff',
- 100: '#dbeafe',
- 200: '#bfdbfe',
- 300: '#93c5fd',
- 400: '#60a5fa',
- 500: '#3b82f6',
- 600: '#2563eb',
- 700: '#1d4ed8',
- 800: '#1e3a5f',
- 900: '#0f1d32',
- },
- accent: {
- 400: '#fbbf24',
- 500: '#f59e0b',
- 600: '#d97706',
- }
- }
- }
- }
- }
- </script>
- <style>
- * { scroll-behavior: smooth; }
- .hero-gradient { background: linear-gradient(135deg, #0f1d32 0%, #1e3a5f 40%, #2563eb 100%); }
- .glass { background: rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.12); }
- .glass-light { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.8); }
- .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
- .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
- </style>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>HotelsComparateur — Find & Compare the Best Hotel Deals</title>
+ <meta name="description" content="HotelsComparateur.com — Search, compare and book the world's best hotels at unbeatable prices. Find deals by destination or search by vibe with AI-powered recommendations." />
+ <meta name="keywords" content="hotel deals, compare hotels, best hotel prices, hotel booking, cheap hotels, luxury hotels, hotel search" />
+ <meta property="og:title" content="HotelsComparateur — Compare & Book the Best Hotels" />
+ <meta property="og:description" content="Find and compare hotel deals worldwide. AI-powered search, best prices guaranteed." />
+ <meta property="og:url" content="https://www.hotelscomparateur.com" />
+ <meta property="og:type" content="website" />
+ <meta name="robots" content="index, follow" />
+ <link rel="canonical" href="https://www.hotelscomparateur.com" />
+ <link rel="preconnect" href="https://fonts.googleapis.com" />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+ <link rel="stylesheet" href="style.css">
 </head>
-<body class="font-sans text-gray-800 bg-white overflow-x-hidden">
- 
-  <!-- Destinations (Partial view based on your previous code) -->
-  <section id="destinations" class="py-20 lg:py-28 bg-brand-900">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  <!-- Existing destination cards -->
-  <a href="https://hotelscomparateur.com/" target="_blank" class="group relative rounded-2xl overflow-hidden aspect-[4/3] animate-on-scroll card-hover" style="transition-delay: 0.5s;">
-  <img src="http://static.photos/travel/640x360/80" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Dubai">
-  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-  <div class="absolute bottom-0 left-0 right-0 p-6">
-  <div class="flex items-center gap-2 mb-1">
-  <i data-lucide="map-pin" class="w-4 h-4 text-accent-400"></i>
-  <span class="text-white/60 text-sm">UAE</span>
-  </div>
-  <h3 class="font-display text-2xl font-bold text-white">Dubai</h3>
-  <div class="mt-2 inline-flex items-center gap-1 text-accent-400 text-sm font-semibold">
-  From $55/night
-  <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-  </div>
-  </div>
-  </a>
-  </div>
-  </div>
-  </section>
- 
-  <!-- Testimonials -->
-  <section id="testimonials" class="py-20 lg:py-28 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
-  <div class="inline-flex items-center gap-2 bg-brand-50 text-brand-600 rounded-full px-4 py-1.5 text-sm font-semibold mb-4">
-  <i data-lucide="message-circle" class="w-4 h-4"></i>
-  Real Reviews
-  </div>
-  <h2 class="font-display text-3xl lg:text-5xl font-bold text-brand-900 mb-4">Loved by Travelers Worldwide</h2>
-  <p class="text-gray-500 text-lg">Don't just take our word for it — hear from real people who saved real money.</p>
-  </div>
- 
-  <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
-  <div class="card-hover bg-gray-50 rounded-2xl p-8 animate-on-scroll">
-  <div class="flex items-center gap-1 mb-4">
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  </div>
-  <p class="text-gray-600 leading-relaxed mb-6">"I was about to book a hotel in Rome for $220/night on Booking.com. HotelsComparateur found the SAME room for $149. That's a $70 savings per night! Already recommended it to all my friends."</p>
-  <div class="flex items-center gap-3">
-  <img src="http://static.photos/people/200x200/10" class="w-11 h-11 rounded-full object-cover" alt="Sarah">
-  <div>
-  <div class="font-semibold text-brand-900 text-sm">Sarah M.</div>
-  <div class="text-gray-400 text-xs">Traveled to Rome, Italy</div>
-  </div>
-  </div>
-  </div>
- 
-  <div class="card-hover bg-gray-50 rounded-2xl p-8 animate-on-scroll" style="transition-delay: 0.1s;">
-  <div class="flex items-center gap-1 mb-4">
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  </div>
-  <p class="text-gray-600 leading-relaxed mb-6">"As a frequent business traveler, this tool is a game-changer. I book 10+ hotels a month and I've saved an average of $60 per booking. That's hundreds of dollars back in my pocket every month!"</p>
-  <div class="flex items-center gap-3">
-  <img src="http://static.photos/people/200x200/20" class="w-11 h-11 rounded-full object-cover" alt="David">
-  <div>
-  <div class="font-semibold text-brand-900 text-sm">David K.</div>
-  <div class="text-gray-400 text-xs">Business Traveler, USA</div>
-  </div>
-  </div>
-  </div>
- 
-  <div class="card-hover bg-gray-50 rounded-2xl p-8 animate-on-scroll" style="transition-delay: 0.2s;">
-  <div class="flex items-center gap-1 mb-4">
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  <i data-lucide="star" class="w-4 h-4 text-accent-500 fill-accent-500"></i>
-  </div>
-  <p class="text-gray-600 leading-relaxed mb-6">"We planned our honeymoon to the Maldives and saved over $800 on our hotel stay! The comparison tool is so easy to use and the price alerts are incredibly helpful. Best travel tool ever! 💛"</p>
-  <div class="flex items-center gap-3">
-  <img src="http://static.photos/people/200x200/30" class="w-11 h-11 rounded-full object-cover" alt="Emma">
-  <div>
-  <div class="font-semibold text-brand-900 text-sm">Emma & Lucas</div>
-  <div class="text-gray-400 text-xs">Honeymoon in Maldives</div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </section>
+<body>
 
- <!-- CTA Section -->
- <section class="py-20 lg:py-28 bg-gradient-to-br from-brand-800 via-brand-700 to-brand-600 relative overflow-hidden">
- <div class="absolute inset-0 pointer-events-none">
- <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-500/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
- <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-400/10 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3"></div>
- </div>
- 
- <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
- <div class="animate-on-scroll">
- <h2 class="font-display text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
- Stop Overpaying for Hotels.
- <br>
- <span class="text-accent-400">Start Saving Today.</span>
- </h2>
- <p class="text-white/60 text-lg lg:text-xl max-w-2xl mx-auto mb-10">
- Join 2 million+ smart travelers who use HotelsComparateur to find the best hotel deals. It's 100% free — you have nothing to lose and money to save.
- </p>
- <div class="flex flex-col sm:flex-row gap-4 justify-center">
- <a href="https://hotelscomparateur.com/" target="_blank" class="group bg-accent-500 hover:bg-accent-400 text-brand-900 font-bold px-10 py-5 rounded-xl text-xl transition-all duration-300 hover:shadow-xl hover:shadow-accent-500/30 inline-flex items-center justify-center gap-3">
- <i data-lucide="search" class="w-6 h-6"></i>
- Compare Hotels Now
- <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+<header class="site-header">
+ <div class="header-inner">
+ <a href="/" class="logo">
+ Hotels<span>Comparateur</span>
+ <span class="logo-domain">.com</span>
  </a>
+ <div class="header-badge">Best Price Guarantee</div>
  </div>
- <p class="text-white/40 text-sm mt-6">No sign-up required • No credit card needed • 100% free</p>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+ <div class="hero-bg"></div>
+ <div class="hero-images" id="heroImages">
+ <!-- injected dynamically -->
+ </div>
+ <div class="hero-overlay"></div>
+ <div class="hero-content">
+ <p class="hero-eyebrow">✦ HotelsComparateur.com ✦</p>
+ <h1 class="hero-title">Find Your <em>Perfect</em> Stay<br>at the Best Price</h1>
+ <p class="hero-sub">Compare thousands of hotels worldwide — search by destination or describe your ideal trip</p><div class="search-box">
+ <div class="search-tabs">
+ <button class="search-tab active" id="tab-destination" onclick="switchTab('destination')">
+ <span class="tab-icon">🗺</span> Search by Destination
+ </button>
+ <button class="search-tab" id="tab-vibe" onclick="switchTab('vibe')">
+ <span class="tab-icon">✨</span> Search by Vibe (AI)
+ </button>
+ </div>
+ <div class="search-fields">
+ <!-- Destination tab -->
+ <div id="panel-destination">
+ <div class="search-row cols-3">
+ <div class="field-group autocomplete-wrap">
+ <label class="field-label">Destination</label>
+ <input class="field-input" id="destInput" type="text" placeholder="Paris, Tokyo, New York…" autocomplete="off" oninput="onDestInput(this.value)" />
+ <div class="autocomplete-list" id="acList"></div>
+ </div>
+ <div class="field-group">
+ <label class="field-label">Check-in</label>
+ <input class="field-input" id="checkinDest" type="date" />
+ </div>
+ <div class="field-group">
+ <label class="field-label">Check-out</label>
+ <input class="field-input" id="checkoutDest" type="date" />
  </div>
  </div>
- </section>
- 
- <!-- Footer -->
- <footer class="bg-brand-900 pt-16 pb-8">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-white/10">
- <div class="lg:col-span-2">
- <a href="https://hotelscomparateur.com/" target="_blank" class="flex items-center gap-2 mb-4">
- <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center border border-white/20">
- <i data-lucide="building-2" class="w-5 h-5 text-accent-400"></i>
+ <div class="search-row cols-2">
+ <div class="field-group">
+ <label class="field-label">Guests</label>
+ <input class="field-input" id="guestsDest" type="number" min="1" max="10" value="2" />
  </div>
- <span class="text-white font-bold text-lg">Hotels<span class="text-accent-400">Comparateur</span></span>
- </a>
- <p class="text-white/50 max-w-md leading-relaxed mb-6">The smartest way to find and compare hotel prices from 100+ booking sites. Save up to 35% on your next stay.</p>
- <a href="https://hotelscomparateur.com/" target="_blank" class="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-400 text-brand-900 font-semibold px-6 py-3 rounded-xl text-sm transition-all duration-300">
- Start Comparing
- <i data-lucide="arrow-right" class="w-4 h-4"></i>
- </a>
+ <div class="field-group" style="justify-content: flex-end;">
+ <label class="field-label">&nbsp;</label>
+ <button class="btn-search" onclick="searchByDestination()">Search Hotels →</button>
  </div>
  </div>
  </div>
- </footer>
- 
- <script src="https://unpkg.com/lucide@latest"></script>
- <script>
- // Initialize Lucide icons
- lucide.createIcons();
+ <!-- Vibe tab -->
+ <div id="panel-vibe" style="display:none">
+ <div class="search-row" style="grid-template-columns:1fr;">
+ <div class="field-group">
+ <label class="field-label">Describe your ideal stay</label>
+ <input class="field-input" id="vibeInput" type="text" placeholder="Romantic boutique hotel in Paris with rooftop views…" />
+ </div>
+ </div>
+ <div class="search-row cols-3">
+ <div class="field-group">
+ <label class="field-label">Check-in</label>
+ <input class="field-input" id="checkinVibe" type="date" />
+ </div>
+ <div class="field-group">
+ <label class="field-label">Check-out</label>
+ <input class="field-input" id="checkoutVibe" type="date" />
+ </div>
+ <div class="field-group">
+ <label class="field-label">Guests</label>
+ <input class="field-input" id="guestsVibe" type="number" min="1" max="10" value="2" />
+ </div>
+ </div>
+ <button class="btn-search" onclick="searchByVibe()">Find My Hotel ✨</button>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
 
- // Navbar scroll effect
- const navbar = document.getElementById('navbar');
- let lastScrollY = 0;
+<!-- Destination image strip -->
+<div class="dest-strip">
+ <div class="dest-scroll" id="destScroll">
+ <!-- injected -->
+ </div>
+</div>
 
- window.addEventListener('scroll', () => {
- const currentScrollY = window.scrollY;
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+ <div class="trust-inner">
+ <div class="trust-item"><span class="trust-icon">🔒</span> Secure Booking</div>
+ <div class="trust-item"><span class="trust-icon">💰</span> Best Price Guarantee</div>
+ <div class="trust-item"><span class="trust-icon">🌍</span> 1M+ Hotels Worldwide</div>
+ <div class="trust-item"><span class="trust-icon">📞</span> 24/7 Customer Support</div>
+ <div class="trust-item"><span class="trust-icon">✅</span> Free Cancellation Available</div>
+ </div>
+</div>
 
- if (currentScrollY > 50) {
- navbar.classList.add('bg-brand-900/95', 'backdrop-blur-xl', 'shadow-lg', 'shadow-black/10');
- } else {
- navbar.classList.remove('bg-brand-900/95', 'backdrop-blur-xl', 'shadow-lg', 'shadow-black/10');
- }
+<!-- MAIN CONTENT -->
+<main class="main">
 
- lastScrollY = currentScrollY;
- });
+ <!-- ERROR -->
+ <div class="error-msg" id="globalError"></div>
 
- // Mobile menu
- const mobileMenuBtn = document.getElementById('mobileMenuBtn');
- const closeMobileMenu = document.getElementById('closeMobileMenu');
- const mobileMenu = document.getElementById('mobileMenu');
- const mobileLinks = document.querySelectorAll('.mobile-link');
+ <!-- LOADING -->
+ <div class="loading-state" id="loadingState">
+ <div class="spinner"></div>
+ <p class="loading-text" id="loadingText">Searching for the best hotels…</p>
+ </div><!-- HOTEL LIST -->
+ <div id="hotelListSection" style="display:none">
+ <div class="section-header">
+ <h2 class="section-title" id="listTitle">Hotels Found</h2>
+ <span class="result-count" id="resultCount"></span>
+ </div>
+ <div class="hotels-grid" id="hotelsGrid"></div>
+ </div>
 
- mobileMenuBtn.addEventListener('click', () => {
- mobileMenu.classList.add('open');
- document.body.style.overflow = 'hidden';
- });
+ <!-- CHECKOUT FORM -->
+ <div class="checkout-wrap" id="checkoutSection">
+ <div style="margin-bottom:1.5rem;">
+ <button class="btn-back" onclick="backToHotel()">← Back to hotel</button>
+ </div>
+ <h2 class="section-title" style="margin-bottom:1.5rem;">Complete Your Booking</h2>
 
- closeMobileMenu.addEventListener('click', () => {
- mobileMenu.classList.remove('open');
- document.body.style.overflow = '';
- });
+ <!-- Booking summary -->
+ <div class="checkout-card">
+ <div class="checkout-card-header">📋 Booking Summary</div>
+ <div class="checkout-card-body">
+ <div class="booking-summary" id="checkoutSummary"></div>
+ </div>
+ </div>
 
- mobileLinks.forEach(link => {
- link.addEventListener('click', () => {
- mobileMenu.classList.remove('open');
- document.body.style.overflow = '';
- });
- });
+ <!-- Guest details -->
+ <div class="checkout-card" id="guestFormSection">
+ <div class="checkout-card-header">👤 Guest Details</div>
+ <div class="checkout-card-body">
+ <div class="form-row">
+ <div class="form-group">
+ <label class="form-label">First Name</label>
+ <input class="form-input" id="gFirstName" type="text" placeholder="John" />
+ </div>
+ <div class="form-group">
+ <label class="form-label">Last Name</label>
+ <input class="form-input" id="gLastName" type="text" placeholder="Doe" />
+ </div>
+ </div>
+ <div class="form-group" style="margin-bottom:1rem;">
+ <label class="form-label">Email Address</label>
+ <input class="form-input" id="gEmail" type="email" placeholder="john@example.com" />
+ </div>
+ <button class="btn-search" onclick="proceedToPayment()">Continue to Payment →</button>
+ </div>
+ </div>
 
- // Scroll animations (Intersection Observer)
- const observerOptions = {
- threshold: 0.1,
- rootMargin: '0px 0px -50px 0px'
- };
+ <!-- Payment section -->
+ <div class="checkout-card" id="paymentSection" style="display:none;">
+ <div class="checkout-card-header">💳 Secure Payment</div>
+ <div class="checkout-card-body">
+ <div class="test-card-note">
+ 🧪 <strong>Sandbox mode:</strong> Use test card <code>4242 4242 4242 4242</code>, any 3-digit CVV, any future expiry date.
+ </div>
+ <div id="prebookLoading" style="text-align:center;padding:2rem;display:none;">
+ <div class="spinner" style="margin:0 auto 0.75rem;"></div>
+ <p class="loading-text">Confirming availability…</p>
+ </div>
+ <div id="targetElement"></div>
+ </div>
+ </div>
+ </div>
 
- const observer = new IntersectionObserver((entries) => {
- entries.forEach(entry => {
- if (entry.isIntersecting) {
- entry.target.classList.add('visible');
+ <!-- CONFIRMATION -->
+ <div class="confirmation-wrap" id="confirmSection">
+ <div class="confirm-icon">✅</div>
+ <h2 class="confirm-title">Booking Confirmed!</h2>
+ <p class="confirm-sub">Your reservation has been successfully placed. A confirmation email will be sent shortly.</p>
+ <div class="confirm-details" id="confirmDetails"></div>
+ <button class="btn-search" style="margin-top:1.5rem; max-width:300px;" onclick="startOver()">Search Again</button>
+ </div>
 
- // Count up animation for stats
- const statEl = entry.target.querySelector('.stat-number');
- if (statEl && !statEl.dataset.animated) {
- statEl.dataset.animated = 'true';
- const target = parseInt(statEl.dataset.count);
- const duration = 2000;
- const start = performance.now();
+</main>
 
- function updateCount(currentTime) {
- const elapsed = currentTime - start;
- const progress = Math.min(elapsed / duration, 1);
- const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+<!-- HOTEL DETAIL MODAL -->
+<div class="modal-overlay" id="hotelModal">
+ <div class="modal" id="modalInner">
+ <img class="modal-header-img" id="modalHeroImg" src="" alt="" />
+ <div class="modal-back">
+ <button class="btn-back" onclick="closeModal()">← Back to results</button>
+ </div>
+ <div class="modal-body">
+ <div id="modalLoading" style="text-align:center;padding:2rem;display:none;">
+ <div class="spinner" style="margin:0 auto 0.75rem;"></div>
+ <p class="loading-text">Loading rooms & rates…</p>
+ </div>
+ <div id="modalContent"></div>
+ </div>
+ </div>
+</div>
 
- const current = Math.floor(eased * target);
-
- if (target >= 1000) {
- statEl.textContent = current.toLocaleString() + '+';
- } else {
- statEl.textContent = current + '+';
- }
-
- if (progress < 1) {
- requestAnimationFrame(updateCount);
- }
- }
-
- requestAnimationFrame(updateCount);
- }
-
- observer.unobserve(entry.target);
- }
- });
- }, observerOptions);
-
- document.querySelectorAll('.animate-on-scroll').forEach(el => {
- observer.observe(el);
- });
-
- // Smooth scroll for anchor links
- document.querySelectorAll('a[href^="#"]').forEach(anchor => {
- anchor.addEventListener('click', function (e) {
- e.preventDefault();
- const target = document.querySelector(this.getAttribute('href'));
- if (target) {
- target.scrollIntoView({ behavior: 'smooth', block: 'start' });
- }
- });
- });
- </script>
- <script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+<!-- Payment SDK -->
+<script src="https://payment-wrapper.liteapi.travel/dist/liteAPIPayment.js?v=a1"></script>
+<script src="script.js"></script>
 </body>
 </html>

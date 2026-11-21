@@ -67,7 +67,20 @@
         "&checkout=" + checkout +
         "&group_adults=" + guests +
         "&no_rooms=1";
-      window.open(url, "_blank", "noopener");
+      // Route the search through Stay22 LetMeAllez: open it with a real
+      // link click, so the Stay22 script rewrites it to its Allez URL
+      // (carrying Paul's affiliate ID) — exactly like the "Compare on"
+      // Expedia / Hotels.com / Booking.com links already do. If the
+      // Stay22 script ever fails to load, the click still opens the
+      // plain Booking.com search, so the search never breaks.
+      var a = document.createElement("a");
+      a.href = url;
+      a.target = "_blank";
+      a.rel = "noopener sponsored nofollow";
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     });
   }
 

@@ -4,7 +4,7 @@
   --navy-2: #14365a;
   --gold: #e8b64c;
   --gold-dark: #c9962e;
-  --cream: #faf7f0;
+  --cream: #ffffff;
   --ink: #1c2733;
   --muted: #5a6b7c;
   --line: #e5e0d5;
@@ -46,12 +46,24 @@ img { max-width: 100%; }
   padding: .25rem .8rem; font-size: .8rem; font-weight: 600; letter-spacing: .02em;
 }
 
-/* Hero */
+/* Hero — 5-star travel photo backdrop on a white page */
 .hero {
-  background: linear-gradient(135deg, #0f2a43 0%, #1b4a73 55%, #2a6ea6 100%);
-  color: #fff; padding: 4rem 1.2rem 3.4rem; text-align: center;
+  position: relative; background: #fff;
+  color: #fff; padding: 4.5rem 1.2rem 3.4rem; text-align: center; overflow: hidden;
 }
-.hero-content { max-width: 960px; margin: 0 auto; }
+.hero-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  opacity: 0; animation: heroFade 18s infinite;
+}
+.hero-bg-1 { background-image: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1600&q=80"); animation-delay: 0s; }
+.hero-bg-2 { background-image: url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80"); animation-delay: 6s; }
+.hero-bg-3 { background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80"); animation-delay: 12s; }
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10, 25, 40, .55), rgba(10, 25, 40, .42) 55%, rgba(10, 25, 40, .62));
+}
+@keyframes heroFade { 0% { opacity: 0; } 8% { opacity: 1; } 33% { opacity: 1; } 41% { opacity: 0; } 100% { opacity: 0; } }
+.hero-content { position: relative; z-index: 2; max-width: 960px; margin: 0 auto; }
 .hero-eyebrow { letter-spacing: .18em; text-transform: uppercase; font-size: .8rem; color: var(--gold); font-weight: 600; }
 .hero h1 { color: #fff; }
 .hero h1 em { color: var(--gold); font-style: italic; }
@@ -78,6 +90,30 @@ img { max-width: 100%; }
 .search-note { font-size: .85rem; color: var(--muted); margin: .8rem 0 0; }
 .search-alt { font-size: .9rem; margin: .35rem 0 0; }
 .search-alt a { font-weight: 600; }
+
+/* Trending reasons — tap to fill the search */
+.trending { font-size: .92rem; margin: .9rem 0 0; color: var(--muted); }
+.chip {
+  font: inherit; font-size: .88rem; font-weight: 600; color: var(--navy-2);
+  background: #fff; border: 1.5px solid var(--line); border-radius: 999px;
+  padding: .3rem .85rem; margin: .15rem .15rem; cursor: pointer;
+}
+.chip:hover { border-color: var(--gold); color: var(--gold-dark); }
+
+/* Scrolling destination strip — restored from the original site */
+.dest-strip { background: #fff; border-bottom: 1px solid var(--line); overflow: hidden; padding: .9rem 0; }
+.dest-scroll { display: flex; width: max-content; animation: destScroll 48s linear infinite; }
+.dest-strip:hover .dest-scroll { animation-play-state: paused; }
+@keyframes destScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.dest-group { display: flex; gap: .8rem; padding-right: .8rem; }
+.dest-strip-item {
+  flex: 0 0 auto; width: 210px; border: none; background: #fff; padding: 0;
+  text-align: left; cursor: pointer; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(15, 42, 67, .10); font: inherit;
+}
+.dest-strip-item img { display: block; width: 100%; height: 118px; object-fit: cover; }
+.dest-strip-name { display: block; font-weight: 700; color: var(--navy); padding: .55rem .7rem 0; font-size: .98rem; }
+.dest-strip-reason { display: block; font-size: .82rem; color: var(--muted); padding: .1rem .7rem .65rem; line-height: 1.35; }
 
 /* Trust bar */
 .trust { background: var(--cream); border-bottom: 1px solid var(--line); }

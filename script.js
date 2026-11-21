@@ -36,6 +36,20 @@
     });
   }
 
+  function initDestPick() {
+    var input = document.getElementById("destInput");
+    var form = document.getElementById("hotelSearch");
+    if (!input) return;
+    var picks = document.querySelectorAll("[data-dest]");
+    for (var i = 0; i < picks.length; i++) {
+      picks[i].addEventListener("click", function () {
+        input.value = this.getAttribute("data-dest");
+        if (form) form.scrollIntoView({ behavior: "smooth", block: "center" });
+        input.focus({ preventScroll: true });
+      });
+    }
+  }
+
   function initSearch() {
     var form = document.getElementById("hotelSearch");
     if (!form) return;
@@ -60,5 +74,6 @@
   document.addEventListener("DOMContentLoaded", function () {
     initDates();
     initSearch();
+    initDestPick();
   });
 })();

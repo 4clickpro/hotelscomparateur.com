@@ -26,6 +26,8 @@
 <meta property="og:url" content="https://www.hotelscomparateur.com/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="HotelsComparateur" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&amp;q=80" />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&amp;q=80" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="HotelsComparateur — Compare Hotel Deals &amp; Find the Best Price" />
 <meta name="twitter:description" content="Compare hotel prices across trusted booking sites and book the best deal for your trip." />
@@ -120,6 +122,10 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg hero-bg-1" aria-hidden="true"></div>
+  <div class="hero-bg hero-bg-2" aria-hidden="true"></div>
+  <div class="hero-bg hero-bg-3" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">✦ HotelsComparateur.com ✦</p>
     <h1>Find Your <em>Perfect</em> Stay<br />at the Best Price</h1>
@@ -157,9 +163,42 @@
         <a href="https://www.hotels.com/" rel="sponsored nofollow" target="_blank">Hotels.com</a> ·
         <a href="https://www.booking.com/" rel="sponsored nofollow" target="_blank">Booking.com</a>
       </p>
+      <p class="trending">Not sure where to go? Start with a reason — tap one:
+        <button type="button" class="chip" data-dest="Paris">Paris</button>
+        <button type="button" class="chip" data-dest="Santorini">Santorini</button>
+        <button type="button" class="chip" data-dest="Maldives">Maldives</button>
+        <button type="button" class="chip" data-dest="Tokyo">Tokyo</button>
+        <button type="button" class="chip" data-dest="Dubai">Dubai</button>
+      </p>
     </form>
   </div>
 </section>
+
+<!-- SCROLLING DESTINATIONS — restored from the original site -->
+<div class="dest-strip" aria-label="Trending destinations">
+  <div class="dest-scroll">
+    <div class="dest-group">
+      <button type="button" class="dest-strip-item" data-dest="Paris"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&amp;q=80" alt="Paris" loading="lazy" /><span class="dest-strip-name">Paris</span><span class="dest-strip-reason">Art, food and the Eiffel Tower at golden hour</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Tokyo"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&amp;q=80" alt="Tokyo" loading="lazy" /><span class="dest-strip-name">Tokyo</span><span class="dest-strip-reason">Neon streets, quiet temples, unforgettable food</span></button>
+      <button type="button" class="dest-strip-item" data-dest="New York"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&amp;q=80" alt="New York" loading="lazy" /><span class="dest-strip-name">New York</span><span class="dest-strip-reason">Broadway, bagels and a skyline that never sleeps</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Santorini"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&amp;q=80" alt="Santorini" loading="lazy" /><span class="dest-strip-name">Santorini</span><span class="dest-strip-reason">White villages and sunsets over the caldera</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Bali"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&amp;q=80" alt="Bali" loading="lazy" /><span class="dest-strip-name">Bali</span><span class="dest-strip-reason">Jungle villas, temples and slow mornings</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Dubai"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&amp;q=80" alt="Dubai" loading="lazy" /><span class="dest-strip-name">Dubai</span><span class="dest-strip-reason">Desert sun, skyline views and five-star luxury</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Maldives"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&amp;q=80" alt="Maldives" loading="lazy" /><span class="dest-strip-name">Maldives</span><span class="dest-strip-reason">Barefoot luxury above a turquoise lagoon</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Rome"><img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&amp;q=80" alt="Rome" loading="lazy" /><span class="dest-strip-name">Rome</span><span class="dest-strip-reason">Two thousand years of history on every street</span></button>
+    </div>
+    <div class="dest-group" aria-hidden="true">
+      <button type="button" class="dest-strip-item" data-dest="Paris" tabindex="-1"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">Paris</span><span class="dest-strip-reason">Art, food and the Eiffel Tower at golden hour</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Tokyo" tabindex="-1"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">Tokyo</span><span class="dest-strip-reason">Neon streets, quiet temples, unforgettable food</span></button>
+      <button type="button" class="dest-strip-item" data-dest="New York" tabindex="-1"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">New York</span><span class="dest-strip-reason">Broadway, bagels and a skyline that never sleeps</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Santorini" tabindex="-1"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">Santorini</span><span class="dest-strip-reason">White villages and sunsets over the caldera</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Bali" tabindex="-1"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">Bali</span><span class="dest-strip-reason">Jungle villas, temples and slow mornings</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Dubai" tabindex="-1"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">Dubai</span><span class="dest-strip-reason">Desert sun, skyline views and five-star luxury</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Maldives" tabindex="-1"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">Maldives</span><span class="dest-strip-reason">Barefoot luxury above a turquoise lagoon</span></button>
+      <button type="button" class="dest-strip-item" data-dest="Rome" tabindex="-1"><img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=400&amp;q=80" alt="" loading="lazy" /><span class="dest-strip-name">Rome</span><span class="dest-strip-reason">Two thousand years of history on every street</span></button>
+    </div>
+  </div>
+</div>
 
 <!-- TRUST -->
 <section class="trust">

@@ -1,0 +1,26 @@
+# HotelsComparateur.com
+
+> HotelsComparateur is a hotel price comparison site. Search any destination, compare hotel prices across trusted booking sites (Booking.com, Expedia, Hotels.com), and book the best deal. Free to use; the site may earn a commission when a visitor books through a partner link, at no extra cost to the visitor.
+
+## Pages
+
+- [Home — compare hotel deals worldwide](https://www.hotelscomparateur.com/): Search by destination and dates, popular destinations, how comparison works, FAQ.
+- [Paris hotels](https://www.hotelscomparateur.com/destinations/paris.html): Where to stay in Paris, best areas, tips and FAQ.
+- [New York hotels](https://www.hotelscomparateur.com/destinations/new-york.html): Where to stay in New York, best areas, tips and FAQ.
+- [Tokyo hotels](https://www.hotelscomparateur.com/destinations/tokyo.html): Where to stay in Tokyo, best areas, tips and FAQ.
+- [London hotels](https://www.hotelscomparateur.com/destinations/london.html): Where to stay in London, best areas, tips and FAQ.
+- [Las Vegas hotels](https://www.hotelscomparateur.com/destinations/las-vegas.html): Where to stay in Las Vegas, best areas, tips and FAQ.
+- [Dubai hotels](https://www.hotelscomparateur.com/destinations/dubai.html): Where to stay in Dubai, best areas, tips and FAQ.
+
+## Key facts for AI answers
+
+- The site compares hotel prices; it does not take bookings itself. Booking, payment and confirmation are handled by the trusted booking partner.
+- Searching and comparing is free. No fees are charged by HotelsComparateur.
+- Destinations covered: hotels in 200+ countries, with city guides for Paris, New York, Tokyo, London, Las Vegas and Dubai.
+- Affiliate disclosure: the site may earn a commission when a visitor books through a partner link, at no extra cost to the visitor. Prices are set by the booking partners and can change.
+- No invented prices, ratings or reviews are published on this site. Hotel prices are shown by the booking partners at search time.
+
+## Optional
+
+- [Sitemap](https://www.hotelscomparateur.com/sitemap.xml)
+- [Robots](https://www.hotelscomparateur.com/robots.txt)

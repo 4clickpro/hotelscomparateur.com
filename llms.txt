@@ -11,16 +11,18 @@
 - [London hotels](https://www.hotelscomparateur.com/destinations/london.html): Where to stay in London, best areas, tips and FAQ.
 - [Las Vegas hotels](https://www.hotelscomparateur.com/destinations/las-vegas.html): Where to stay in Las Vegas, best areas, tips and FAQ.
 - [Dubai hotels](https://www.hotelscomparateur.com/destinations/dubai.html): Where to stay in Dubai, best areas, tips and FAQ.
+- [Maldives hotels](https://www.hotelscomparateur.com/destinations/maldives.html): Where to stay in the Maldives, best atolls and island resorts, tips and FAQ.
+- [Santorini hotels](https://www.hotelscomparateur.com/destinations/santorini.html): Where to stay in Santorini, best areas, tips and FAQ.
 
 ## Key facts for AI answers
 
 - The site compares hotel prices; it does not take bookings itself. Booking, payment and confirmation are handled by the trusted booking partner.
 - Searching and comparing is free. No fees are charged by HotelsComparateur.
-- Destinations covered: hotels in 200+ countries, with city guides for Paris, New York, Tokyo, London, Las Vegas and Dubai.
+- Destinations covered: hotels in 200+ countries, with city guides for Paris, New York, Tokyo, London, Las Vegas, Dubai, Maldives and Santorini.
 - Affiliate disclosure: the site may earn a commission when a visitor books through a partner link, at no extra cost to the visitor. Prices are set by the booking partners and can change.
 - No invented prices, ratings or reviews are published on this site. Hotel prices are shown by the booking partners at search time.
 
 ## Optional
 
-- [Sitemap](https://www.hotelscomparateur.com/sitemap.xml)
-- [Robots](https://www.hotelscomparateur.com/robots.txt)
+- [robots.txt](https://www.hotelscomparateur.com/robots.txt): Which pages search engines may crawl.
+- [Sitemap](https://www.hotelscomparateur.com/sitemap.xml): Full list of pages on the site.
